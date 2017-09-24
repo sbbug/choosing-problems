@@ -1,0 +1,168 @@
+<!DOCTYPE>
+<html>
+  <head>
+     <title>显示图片</title>
+     <meta http-equiv="Content-Type" content = "text/html" charset = "utf-8"> 
+	 <script src = "JS/data.js" type = "text/javascript"></script>
+     <link rel = "stylesheet" href = "CSS/showImage.css" type = "text/css"/>
+	 <style>
+	    
+		#content{
+		  
+		  width:700px;
+		  height:650px;
+		  margin-top:10%;
+		  margin-left:30%;
+		}
+		#left{
+		  width:510px;
+		  height:400px;
+		  
+          float:left;
+		  }
+		
+		#right{
+		  float:right;
+		  width:160px;
+		  height:300px;
+		  margin-top:100px;
+		  margin-bottom:200px;
+		  
+		}
+		#content #left img{
+		  
+		  width:500px;
+		  height:400px;
+		  
+		}
+		#content  .button_style{
+	      width:120px;
+		  height:30px;
+		  background-color:#00BFFF;
+		  border-radius:3px;
+		  face:华文行楷;
+          font-size:14px;
+          font-weight:bold;	
+          color:white;
+          cursor:pointer;		  
+	   }
+	   #content #right .span_style{
+	     font-size:30px;
+		 color:black;
+		 face:华文行楷;
+		 font-weight:bolder;	
+		 padding-left:42px;
+		 
+	   }
+	   
+	   #showInfo{
+	     text-align:center;
+	     width:500px;
+         height:100px;
+		
+		 float:left;
+		 }
+		 
+	   #showInfo .font_style{
+	     font-size:20px;
+		 color:black;
+		 face:华文行楷;
+		 font-weight:bolder;	
+	   }	 
+	  </style>
+ </head>
+  <body>
+       
+	   <div id = "content">
+	      
+		    <div id = "left">
+			  <div id = "showImage"><img id = "img" src = ""></div>
+              <script>
+			      window.onload = function(){
+		    
+			         var key = sessionStorage.getItem("key");
+		             
+                     var img = document.getElementById("img");
+                         
+                     img.src = arrImg[key];						 
+					  
+					 
+		          }
+			  </script>
+			</div>
+
+            <div id = "right">
+			  <button class = "button_style" onclick = "startTime(1)">计时开始</button>
+			  </br><br/> 
+			  <span class = "span_style" id = "showTime">0</span>
+			  <br/><br/>
+			  <button class = "button_style" onclick = "clearTime()">结束</button>
+			  <br/><br/>
+			  <button class = "button_style"><a href = "index.html">返回</a></button>
+			</div> 
+            <script>
+               
+			   var time = document.getElementById('showTime');
+			   var i = 0;
+               var setTimeId;
+			   //答题秒数
+			   var endtime = 12;
+			   
+			   var status = 1;
+			   
+			   function startTime(){
+			        
+					//计时器停止
+					
+					if(status == 0)
+					  return ;
+					
+					//计时器时间已到
+					
+                    if(i == endtime){
+					  
+					  alert("时间到");
+					  
+					  return ;
+					}
+					  
+					//播放警示音乐
+					
+					if(i == 10){
+					  bgSound = document.createElement("embed");
+					  bgSound.src = "http://mp3.yinxiao.com/abcdefg/1234567/upload/滴滴声2.mp3";
+					  document.body.appendChild(bgSound);
+					}
+					
+					i++;
+					time.innerText = i;
+					setTimeId = setTimeout('startTime()',1000);
+		       }
+			   
+			   function clearTime(){
+			      
+			      status = 0;
+			   }
+            </script>	
+            <div id = "showInfo">
+                <button id = "warg" class = "button_style" onclick = "showInfo()">提示信息</button>
+                <p id = "info" class = "font_style" >相关信息提示</p>
+                 <script>
+                       function showInfo(){
+					     
+						 var key = sessionStorage.getItem("key");
+						 
+						 var info = document.getElementById("info");
+					     
+						 info.innerText = arrImgInfo[key];
+					     
+					   }
+                 </script>				 
+            </div>			
+	   </div>
+	   
+	 
+  </body>
+
+
+</html>

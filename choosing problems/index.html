@@ -1,0 +1,212 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>全国科普讲解大赛</title>
+	<meta http-equiv="Content-Type" content = "text/html" charset = "utf-8">
+	<link rel = "stylesheet" href = "CSS/index.css" type = "text.css"/>
+	<style>
+	   
+	   #contain{
+	      width:1150px;
+		  height:1100px;
+		  margin-left:8%;
+		  margin-right:8%;
+		  
+	   }
+	   #header{
+	      width:1085px;
+		  height:60px;
+		  margin-left:2%;
+		  margin-right:2%;
+		  background-color:#00BFFF;
+	   }
+	   #header #show_title{
+	      width:700px;
+		  height:80px;
+		  text-align:center;
+		  face:华文行楷;
+          font-size:40px;
+          font-weight:bolder;	
+          color:white;
+		  padding-left:170px;
+		  padding-top:20px;
+		}
+	   
+	   #main{
+	     width:1100px;
+		 height:700px;
+		 margin-left:2%;
+		 margin-right:2%;
+		 
+	   }
+	   
+	   #main .td_style{
+	     margin-left:20px;
+	   }
+	   
+	   #main #butn{
+	   
+	     width:1090px;
+         height:40px;
+         
+         margin-top:1%;
+         text-align:center; 
+         		 
+	   }
+	   
+	   #main #butn .button_style{
+	      width:240px;
+		  height:35px;
+		  background-color:#00BFFF;
+		  border-radius:3px;
+		  face:华文行楷;
+          font-size:14px;
+          font-weight:bold;	
+          color:white;
+          cursor:pointer;		  
+	   }
+	   #main #img{
+	      background-color:red;
+	   }
+	  
+	   #footer{
+	     width:1080px;
+		 height:60px;
+		 margin-left:2%;
+		 margin-right:2%;
+		 margin-top:8%;
+		 border:5px solid lightblue;
+		 background:#000000;
+		  face:华文行楷;
+          font-size:14px;
+          font-weight:bold;	
+          color:blue;
+		  text-align:center;
+		  padding-top:30px;
+	   }
+	</style>
+  </head>
+  <body>
+       <div id = "contain">
+	     <div id = "header">
+		     <div id = "show_title">全国科普讲解大赛</div>
+		    
+		 </div>
+		 
+		 <div id = "main">
+		     <table border = "1px" cellpadding="31px" >
+             <tr>
+			    <td bgcolor = "#00BFFF"><img id = "img" style = "visibility:visible" src = "images/1.jpg" onclick = "enter(0)"></td>
+			    <td ><img id = "img" style = "visibility:visible" src = "images/2.jpg" onclick = "enter(1)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/3.jpg" onclick = "enter(2)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/4.jpg" onclick = "enter(3)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/5.jpg" onclick = "enter(4)"></td>
+			 
+			 </tr>
+			 <tr>
+			    <td><img id = "img" style = "visibility:visible" src = "images/6.jpg" onclick = "enter(5)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/7.jpg" onclick = "enter(6)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/8.jpg" onclick = "enter(7)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/9.jpg" onclick = "enter(8)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/10.jpg" onclick = "enter(9)"></td>
+			 
+			 </tr>
+			 <tr>
+			    <td><img id = "img" style = "visibility:visible" src = "images/11.jpg" onclick = "enter(10)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/12.jpg" onclick = "enter(11)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/13.jpg" onclick = "enter(12)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/14.jpg" onclick = "enter(13)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/15.jpg" onclick = "enter(14)"></td>
+			 
+			 </tr>
+			 <tr>
+			    <td><img id = "img" style = "visibility:visible" src = "images/16.jpg" onclick = "enter(15)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/17.jpg" onclick = "enter(16)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/18.jpg" onclick = "enter(17)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/19.jpg" onclick = "enter(18)"></td>
+			    <td><img id = "img" style = "visibility:visible" src = "images/20.jpg" onclick = "enter(19)"></td>
+			 
+			 </tr>
+            
+            </table>	
+            <div id = "butn" >
+			     <button id = "start" class = "button_style" onclick = "Go()">开始</button>
+				 <button id = "end" class = "button_style" onclick = "end()">结束</button>
+            </div>	
+			
+            <script>
+			      //图片跳转函数
+                   
+				   function enter(key){
+				       
+					   sessionStorage.setItem("key",key);
+					   
+					   open("showImage.html","","fullscreen=1");
+					   
+				   }
+                 				  
+			      //获取图片数组
+					   
+				  var tds = document.getElementsByTagName("td");
+			      
+				  var  i ;
+				  
+				  var temp ;
+				  
+				  var status = 1;
+				  
+				  //将所有图片背景设置成白色
+				  
+				  function setColor(){
+				       
+					   for(var  i = 0 ; i < tds.length ; i++){
+					      tds[i].setAttribute('bgcolor','white');
+					   }
+				  }
+				  
+                  function Go(){
+				        
+					   if(status == 0)
+					      return ;
+					   
+					   
+					   setColor();
+					   
+					   var i ;
+					   
+					   //随机生成1-20之间的随机数
+					   i = Math.random()*(20-1)
+					   
+					   i = Math.round(i);
+					   
+					   //防止前后两次生成的随机数相同
+					   
+					  
+					  // alert(i);
+					   tds[i].setAttribute("bgcolor","#00BFFF");
+					   
+					   
+					   
+					   setTimeout("Go()",350);
+						   
+				  }
+				  
+				  function end(){
+				      status = 0;
+				  }
+              </script>			
+	     </div>
+		 
+		 <div id = "footer">
+		    南京工业大学一心团队成员制作，版权所有，违者必究
+			<br/>联系方式 手机：15195918352
+		 </div>
+	   
+	   
+	   </div>
+  
+  </body>
+  
+
+
+</html>

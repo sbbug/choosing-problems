@@ -1,0 +1,74 @@
+<style>
+	   
+	   #contain{
+	      width:1150px;
+		  height:1100px;
+		  margin-left:8%;
+		  margin-right:8%;
+		  
+	   }
+	   #header{
+	      width:1085px;
+		  height:80px;
+		  margin-left:2%;
+		  margin-right:2%;
+		  background-color:#00BFFF;
+	   }
+	   #header #show_title{
+	      width:700px;
+		  height:80px;
+		  text-align:center;
+		  face:华文行楷;
+          font-size:40px;
+          font-weight:bolder;	
+          color:white;
+		  padding-left:170px;
+		  padding-top:20px;
+		}
+	   
+	   #main{
+	     width:1100px;
+		 height:720px;
+		 margin-left:2%;
+		 margin-right:2%;
+		 
+	   }
+	   
+	   #main .td_style{
+	     margin-left:20px;
+	   }
+	   
+	   #main #butn{
+	   
+	     width:1090px;
+         height:40px;
+         
+         margin-top:1%;
+         text-align:center; 
+         		 
+	   }
+	   
+	   #main #butn .button_style{
+	      width:240px;
+		  height:35px;
+		  background-color:#00BFFF;
+		  border-radius:3px;
+		  face:华文行楷;
+          font-size:14px;
+          font-weight:bold;	
+          color:white;
+          cursor:pointer;		  
+	   }
+	   #main #img{
+	      background-color:red;
+	   }
+	   #footer{
+	     width:1080px;
+		 height:100px;
+		 margin-left:2%;
+		 margin-right:2%;
+		 margin-top:8%;
+		 border:5px solid lightblue;
+		 background:#000000;
+	   }
+	</style>
